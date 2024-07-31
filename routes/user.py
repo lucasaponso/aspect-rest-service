@@ -25,8 +25,8 @@ async def login(user_creds: UserAuth):
         conn.commit()
         conn.close()
 
-        login_attempt = SuccessLogin(username=user_creds.username, token=access_token, status=True, msg="User has been login successfully")
         status_code = status.HTTP_200_OK
+        login_attempt = SuccessLogin(username=user_creds.username, token=access_token, status=True, msg="User has been login successfully")
     else:
         status_code = status.HTTP_401_UNAUTHORIZED
         login_attempt = FailLogin(username=user_creds.username, status=False, msg=f"Incorrect login credentials, thw following user was unable to login successfully: {user_creds.username}")
