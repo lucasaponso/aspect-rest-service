@@ -10,7 +10,6 @@ router = APIRouter(prefix="/core")
 
 db_dependency = Annotated[Session, Depends(get_db)]
 
-# Define a Pydantic model for the response
 class DeviceInfo(BaseModel):
     linked_key: str = Query(max_length=32)
     unit_serial_no: str = Query(max_length=32)
@@ -23,8 +22,8 @@ class DeviceInfo(BaseModel):
     active_sw_version: str = Query(max_length=50)
     backup_sw_version: str = Query(max_length=50)
     asset_no: str = Query(max_length=50)
-    ip_address: str = Query(max_length=15)  ##perhaps change this to a ip address type
-    slot_id: int ##set max and min here
+    ip_address: str = Query(max_length=15)
+    slot_id: int
     location: str = Query(max_length=100)
     config_signature : str = Query(max_length=50)
     companyname : str = Query(max_length=50)
@@ -43,7 +42,6 @@ class DeviceInfo(BaseModel):
 
 @router.get('/inventory', response_model=List[DeviceInfo], tags=["data"], summary='Retrieves all data associated with the device_info_tab table')
 async def get_inventory(db: db_dependency):
-    # Execute raw SQL
     query = """SELECT
             serial_no,
             unit_serial_no,

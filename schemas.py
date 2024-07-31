@@ -6,7 +6,19 @@ class TokenSchema(BaseModel):
     access_token: str = Query(None, regex="^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$")
 
 
+class SuccessLogin(BaseModel):
+    username: str
+    token: str = Query(None, regex="^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$")
+    status: bool
+    msg: str
+
+class FailLogin(BaseModel):
+    username: str
+    status: bool
+    msg: str
+
 class TokenPayload(BaseModel):
+
     sub: str = None
     exp: int = None
 
