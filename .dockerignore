@@ -3,3 +3,4 @@
 ./db/user.db
 ./routes/__pycache__
 ./gitignore
+./README.md
