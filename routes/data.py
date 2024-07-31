@@ -39,55 +39,6 @@ class DeviceInfo(BaseModel):
     config_name: str = Query(max_length=100)
     nav_submap_id: str = Query(max_length=50)
 
-    # unit_password: str = Query(max_length=100)
-
-    # child_node: str = Query(max_length=5)
-    # xtab_mode: str = Query(max_length=15)
-    # config_signature: str = Query(max_length=50)
-    # node_state: str = Query(max_length=10)
-    # region_id: int ##set max and min here
-    # region_name : str = Query(max_length=50)
-    # rack_id : int ##set max and min here
-    # rack_name : str = Query(max_length=50)
-    # shelf_id : int ##set max and min here
-    # custom_field1 : str = Query(max_length=50)
-    # snmask : str = Query(max_length=15) ##perhaps change this to a ip address type
-    # gwaddr : str = Query(max_length=15) ##perhaps change this to a ip address type
-    # csaddr : str = Query(max_length=50)
-    # community_name : str = Query(max_length=50)
-    # discovered_node : str = Query(max_length=5)
-    # user_name : str = Query(max_length=50)
-    # connection_method : str = Query(max_length=50)
-    # q1_device : str = Query(max_length=5)
-    # q1_bus : str = Query(max_length=50)
-    # q1_ne_address : str = Query(max_length=50)
-    # q1_fe_number : str = Query(max_length=50)
-    # enable_telent : str = Query(max_length=5)
-    # enable_ssh : str = Query(max_length=5)
-    # enable_web : str = Query(max_length=5)
-    # enable_lct : str = Query(max_length=5)
-    # enable_mste : str = Query(max_length=5)
-    # default_app : str = Query(max_length=20)
-    # bp_mode : str = Query(max_length=20)
-    # backplain_bus : int ##set max and min here
-    # subnet_id : int ##set max and min here
-    # phone_no: str = Query(max_length=50)
-    # phone_no_2: str = Query(max_length=50)
-    # use_same_ip: str = Query(max_length=5)
-    # enable_config_save: str = Query(max_length=5)
-    # template_1: str = Query(max_length=200)
-    # template_2: str = Query(max_length=200)
-    # template_3: str = Query(max_length=200)
-    # device_specific_config: str = Query(max_length=5000)
-    # snmpv3_eng_id_type: str = Query(max_length=20)
-    # snmpv3_eng_id: str = Query(max_length=50)
-    # snmpv3_user: str = Query(max_length=15)
-    # maintenance_mode: str = Query(max_length=5)
-    # sim_1_ip: str = Query(max_length=15)
-    # sim_2_ip: str = Query(max_length=15)
-    # masking_template: str = Query(max_length=200)
-
-
 
 
 @router.get('/inventory', response_model=List[DeviceInfo], tags=["data"], summary='Retrieves all data associated with the device_info_tab table')
